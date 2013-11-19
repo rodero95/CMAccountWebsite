@@ -1,6 +1,6 @@
 var lrSnippet = require('connect-livereload')();
 var proxySnippet = function(req, res, options) {
-  req.headers.host = 'account.cyanogenmod.org';
+  req.headers.host = 'cma.rodnet.es';
   require('grunt-connect-proxy/lib/utils').proxyRequest(req, res, options);
 };
 var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
@@ -65,13 +65,13 @@ module.exports = function(grunt) {
         },
         proxies: [{
           context: '/api',
-          host: 'account.cyanogenmod.org',
+          host: 'cma.rodnet.es',
           port: 443,
           https: true
         },
         {
           context: '/_ah',
-          host: 'account.cyanogenmod.org',
+          host: 'cma.rodnet.es',
           port: 443,
           https: true
         }]
